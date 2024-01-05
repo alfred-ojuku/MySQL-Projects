@@ -1,0 +1,1 @@
+I'll build a voting database that stores data for an election. The quality of the data is improved by designing the database with constraints, including primary and foerign keys and using triggers to prevent bad data from being entered. Triggers will also track changes in the database.
