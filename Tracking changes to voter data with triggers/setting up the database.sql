@@ -14,9 +14,9 @@ voter_name      VARCHAR(100)   NOT NULL,
 voter_address   VARCHAR(100)   NOT NULL,
 voter_district  VARCHAR(100)   NOT NULL,
 voter_precint   VARCHAR(100)   NOT NULL,
- voter_party    VARCHAR(20),
- voter_location VARCHAR(100)   NOT NULL,
- voter_reg_no   INT            NOT NULL    UNIQUE   
+voter_party    VARCHAR(20),
+voter_location VARCHAR(100)   NOT NULL,
+voter_reg_no   INT            NOT NULL    UNIQUE   
 );
 
 -- ballot table
@@ -51,6 +51,17 @@ candidate_address VARCHAR(100)  NOT NULL,
 candidate_party   VARCHAR(20),
 incumbent_flag    BOOL,
 CONSTRAINT FOREIGN KEY (race_id) REFERENCES race(race_id)
+);
+
+-- ballot_candidate table
+DROP TABLE IF EXISTS ballot_candidate;
+
+CREATE TABLE ballot_candidate(
+ballot_id     INT,
+candidate_id  INT,
+PRIMARY KEY (ballot_id, candidate_id),
+CONSTRAINT FOREIGN KEY (ballot_id) REFERENCES ballot(ballot_id),
+CONSTRAINT FOREIGN KEY (candidate_id) REFERENCES candidate(candidate_id)
 );
 
 
