@@ -2,6 +2,8 @@ DROP DATABASE IF EXISTS weather;
 
 CREATE DATABASE Weather;
 
+USE weather;
+
 DROP TABLE IF EXISTS current_weather_load;
 
 CREATE TABLE current_weather_load
@@ -25,7 +27,6 @@ sunrise         TIME,
 sunset          TIME,
 CONSTRAINT CHECK(station_lat BETWEEN -90 AND 90),
 CONSTRAINT CHECK(station_lon BETWEEN -180 AND 180),
-CONSTRAINT CHECK(as_of_dt BETWEEN (NOW() - INTERVAL 1 DAY) AND NOW()),
 CONSTRAINT CHECK(temp BETWEEN -50 AND 150),
 CONSTRAINT CHECK(feels_like BETWEEN -50 AND 150),
 CONSTRAINT CHECK(wind BETWEEN 0 AND 300),
