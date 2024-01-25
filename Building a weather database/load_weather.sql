@@ -1,7 +1,5 @@
 USE weather;
-
 DELETE FROM current_weather_load;
-
 LOAD DATA LOCAL INFILE 'C:/Users/Roam/Desktop/MySQL-Projects/Building a weather database/data/weather.csv'
 INTO TABLE current_weather_load
 FIELDS TERMINATED BY ','
@@ -24,11 +22,8 @@ weather_desc,
 sunrise,
 sunset
 )
-
 SET as_of_dt = str_to_date(@aod,'%Y%m%d %H:%i');
-
 SHOW WARNINGS;
-
 SELECT concat('No data loaded for ', station_id,': ',station_city)
 FROM current_weather cw
 WHERE cw.station_id NOT IN

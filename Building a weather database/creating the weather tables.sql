@@ -1,11 +1,7 @@
 DROP DATABASE IF EXISTS weather;
-
-CREATE DATABASE Weather;
-
+CREATE DATABASE weather;
 USE weather;
-
 DROP TABLE IF EXISTS current_weather_load;
-
 CREATE TABLE current_weather_load
 (
 station_id      INT PRIMARY KEY,
@@ -42,7 +38,5 @@ CONSTRAINT CHECK(pressure BETWEEN 0 AND 1100),
 CONSTRAINT CHECK(visibility BETWEEN 0 AND 20),
 CONSTRAINT CHECK(humidity BETWEEN 0 AND 100)
 );
-
 DROP TABLE IF EXISTS current_weather;
-
 CREATE TABLE current_weather LIKE current_weather_load;
