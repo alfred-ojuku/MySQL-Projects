@@ -9,6 +9,3 @@ To login into MySQL server though the command line without having to type in the
 
 ### Project Overview
 I'll schedule a cron job to run the weather.sh script every 5 minutes.If a new weather file exists, it will be loaded into the current_weather_load table and subsequently copied to the current_weather table if there are no errors in the loading stage.
-
-### Reference
-MySQL Crash Course A hands on introduction to database development by Rick Silva. 
